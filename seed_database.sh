@@ -6,5 +6,10 @@ python3 manage.py migrate
 python3 manage.py makemigrations rallyapi
 python3 manage.py migrate rallyapi
 python3 manage.py loaddata users
-python3 manage.py loaddata tokens
-
+python manage.py loaddata tokens
+python manage.py loaddata tokens
+python3 manage.py loaddata type
+python3 manage.py loaddata community
+python3 manage.py loaddata donor
+python3 manage.py loaddata need
+python3 manage.py loaddata donorneed
