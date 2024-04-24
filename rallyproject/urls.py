@@ -5,7 +5,7 @@ from rallyapi.views import NeedViewSet
 
 
 router = routers.DefaultRouter(trailing_slash=False)
-router.register(r"need", NeedViewSet, "need")
+router.register(r"needs", NeedViewSet, "need")
 
 
 urlpatterns = [
