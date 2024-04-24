@@ -1,0 +1,25 @@
+[
+    {
+      "model": "rallyapi.need",
+      "pk": 1,
+      "fields": {
+        "description": "Description A",
+        "date_posted": "2024-04-25",
+        "complete": true,
+        "community": 1,
+        "user": 1
+      }
+    },
+    {
+      "model": "rallyapi.need",
+      "pk": 2,
+      "fields": {
+        "description": "Description B",
+        "date_posted": "2024-04-26",
+        "complete": false,
+        "community": 2,
+        "user": 2
+      }
+    }
+  ]
+  

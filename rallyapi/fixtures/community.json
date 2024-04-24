@@ -1,0 +1,19 @@
+[
+    {
+      "model": "rallyapi.community",
+      "pk": 1,
+      "fields": {
+        "name": "Community A",
+        "location": "Location A"
+      }
+    },
+    {
+      "model": "rallyapi.community",
+      "pk": 2,
+      "fields": {
+        "name": "Community B",
+        "location": "Location B"
+      }
+    }
+  ]
+  
