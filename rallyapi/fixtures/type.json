@@ -1,0 +1,17 @@
+[
+    {
+      "model": "rallyapi.type",
+      "pk": 1,
+      "fields": {
+        "name": "Type A"
+      }
+    },
+    {
+      "model": "rallyapi.type",
+      "pk": 2,
+      "fields": {
+        "name": "Type B"
+      }
+    }
+  ]
+  

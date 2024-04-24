@@ -1,0 +1,19 @@
+[
+    {
+      "model": "rallyapi.donor",
+      "pk": 1,
+      "fields": {
+        "user": 1,
+        "type": 1
+      }
+    },
+    {
+      "model": "rallyapi.donor",
+      "pk": 2,
+      "fields": {
+        "user": 2,
+        "type": 2
+      }
+    }
+  ]
+  
