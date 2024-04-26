@@ -12,5 +12,7 @@ urlpatterns = [
     path("login", UserViewSet.as_view({"post": "user_login"}), name="login"),
     path(
         "register", UserViewSet.as_view({"post": "register_account"}), name="register"
-    ),
+    ),    
+    path('needs/<int:user_id>/', NeedViewSet.as_view({'get': 'retrieve'}), name='user-needs'),
+
 ]
