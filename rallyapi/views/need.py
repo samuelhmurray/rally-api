@@ -7,7 +7,7 @@ from django.contrib.auth.models import User
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ['id', 'username', 'email']
+        fields = ['id', 'first_name', 'last_name', 'username', 'email']
 
 class CommunitySerializer(serializers.ModelSerializer):
     class Meta:
@@ -20,17 +20,16 @@ class TypeSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class DonorSerializer(serializers.ModelSerializer):
-    user = UserSerializer()
-    type = TypeSerializer()
-
+    type =  TypeSerializer(many=False)
+    user = UserSerializer(many=False)
     class Meta:
         model = Donor
-        fields = ['id', 'user', 'type']
+        fields = ['user','type']
 
 class NeedSerializer(serializers.ModelSerializer):
     user = UserSerializer()
     community = CommunitySerializer()
-    donors = DonorSerializer(many=True, read_only=True)
+    donors = DonorSerializer(many=True)
 
     class Meta:
         model = Need
