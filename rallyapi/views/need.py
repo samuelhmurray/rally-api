@@ -1,6 +1,7 @@
+from rest_framework import status
 from rest_framework import serializers, viewsets, permissions
 from rest_framework.response import Response
-from ..models import Community, Need
+from ..models import Community, Need, Donor, Type, DonorNeed
 from django.contrib.auth.models import User
 
 class UserSerializer(serializers.ModelSerializer):
@@ -13,13 +14,27 @@ class CommunitySerializer(serializers.ModelSerializer):
         model = Community
         fields = '__all__'
 
+class TypeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Type
+        fields = '__all__'
+
+class DonorSerializer(serializers.ModelSerializer):
+    user = UserSerializer()
+    type = TypeSerializer()
+
+    class Meta:
+        model = Donor
+        fields = ['id', 'user', 'type']
+
 class NeedSerializer(serializers.ModelSerializer):
     user = UserSerializer()
     community = CommunitySerializer()
+    donors = DonorSerializer(many=True, read_only=True)
 
     class Meta:
         model = Need
-        fields = ['id', 'description', 'date_posted', 'complete', 'user', 'community']
+        fields = ['id', 'title', 'description', 'date_posted', 'complete', 'user', 'community', 'donors']
 
 class NeedViewSet(viewsets.ViewSet):
     permission_classes = [permissions.IsAuthenticated]

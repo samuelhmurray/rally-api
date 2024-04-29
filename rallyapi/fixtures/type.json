@@ -3,14 +3,21 @@
       "model": "rallyapi.type",
       "pk": 1,
       "fields": {
-        "name": "Type A"
+        "name": "time"
       }
     },
     {
       "model": "rallyapi.type",
       "pk": 2,
       "fields": {
-        "name": "Type B"
+        "name": "finance"
+      }
+    },
+    {
+      "model": "rallyapi.type",
+      "pk": 3,
+      "fields": {
+        "name": "material"
       }
     }
   ]
