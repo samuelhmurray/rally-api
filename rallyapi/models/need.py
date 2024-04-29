@@ -4,6 +4,7 @@ from .community import Community
 
 class Need(models.Model):
     description = models.TextField()
+    title = models.TextField()
     date_posted = models.DateTimeField(auto_now_add=True)
     complete = models.BooleanField(default=False)
     community = models.ForeignKey(Community, on_delete=models.CASCADE)

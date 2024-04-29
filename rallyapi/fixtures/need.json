@@ -4,6 +4,7 @@
       "pk": 1,
       "fields": {
         "description": "Description A",
+        "title": "title 1",
         "date_posted": "2024-04-25",
         "complete": true,
         "community": 1,
@@ -15,6 +16,7 @@
       "pk": 2,
       "fields": {
         "description": "Description B",
+        "title": "title 2",
         "date_posted": "2024-04-26",
         "complete": false,
         "community": 2,
