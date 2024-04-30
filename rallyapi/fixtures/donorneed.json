@@ -9,6 +9,14 @@
     },
     {
       "model": "rallyapi.donorneed",
+      "pk": 3,
+      "fields": {
+        "donor": 1,
+        "need": 1
+      }
+    },
+    {
+      "model": "rallyapi.donorneed",
       "pk": 2,
       "fields": {
         "donor": 2,
