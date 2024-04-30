@@ -7,5 +7,5 @@ class Need(models.Model):
     title = models.TextField()
     date_posted = models.DateTimeField(auto_now_add=True)
     complete = models.BooleanField(default=False)
-    community = models.ForeignKey(Community, on_delete=models.CASCADE)
+    community = models.ForeignKey(Community, on_delete=models.PROTECT)
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)

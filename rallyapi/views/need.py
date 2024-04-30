@@ -52,3 +52,12 @@ class NeedViewSet(viewsets.ViewSet):
         needs = Need.objects.filter(user_id=user_id)
         serializer = NeedSerializer(needs, many=True, context={'request': request})
         return Response(serializer.data)
+    
+    def destroy(self, request, pk=None):
+        try:
+            need = Need.objects.get(pk=pk)
+        except Need.DoesNotExist:
+            return Response({'error': 'Need not found'}, status=status.HTTP_404_NOT_FOUND)
+
+        need.delete()
+        return Response({'message': 'Need deleted successfully'}, status=status.HTTP_204_NO_CONTENT)
