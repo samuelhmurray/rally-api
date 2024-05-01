@@ -1,12 +1,13 @@
 from django.contrib import admin
 from django.urls import include, path
 from rest_framework import routers
-from rallyapi.views import NeedViewSet, UserViewSet, DonorViewSet, DonorNeedViewSet
+from rallyapi.views import NeedViewSet, UserViewSet, DonorViewSet, DonorNeedViewSet, CommunityViewSet
 
 
 router = routers.DefaultRouter(trailing_slash=False)
 router.register(r"needs", NeedViewSet, "need")
 router.register(r"donor-need", DonorNeedViewSet, "donor-need")
+router.register(r"community", CommunityViewSet, "community")
 
 
 urlpatterns = [
