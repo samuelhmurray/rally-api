@@ -1,6 +1,8 @@
 from django.contrib.auth.models import User
 from django.db import models
 from .community import Community
+from django.utils import timezone
+
 
 class Need(models.Model):
     description = models.TextField()

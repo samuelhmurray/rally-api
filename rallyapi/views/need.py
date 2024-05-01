@@ -35,6 +35,10 @@ class DonorNeedSerializer(serializers.ModelSerializer):
         model = DonorNeed
         fields = ['id', 'need', 'donor', 'donor_type']
 
+class BasicNeedSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Need
+        fields = ['id', 'title', 'description', 'date_posted', 'complete', 'community', 'user']
 
 class NeedSerializer(serializers.ModelSerializer):
     user = UserSerializer()
@@ -53,6 +57,13 @@ class NeedViewSet(viewsets.ViewSet):
         needs = Need.objects.all()
         serializer = NeedSerializer(needs, many=True, context={'request': request})
         return Response(serializer.data)
+    
+    def create(self, request):
+        serializer = BasicNeedSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     def retrieve(self, request, pk=None):
         try:
