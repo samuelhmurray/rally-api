@@ -14,3 +14,4 @@ class DonorViewSet(viewsets.ViewSet):
         DonorNeed.objects.create(donor_id=donor.id, need_id=need_id)
 
         return Response({'message': 'Claimed successfully'}, status=status.HTTP_200_OK)
+    

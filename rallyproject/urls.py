@@ -6,7 +6,6 @@ from rallyapi.views import NeedViewSet, UserViewSet, DonorViewSet, DonorNeedView
 
 router = routers.DefaultRouter(trailing_slash=False)
 router.register(r"needs", NeedViewSet, "need")
-router.register(r"donors", DonorViewSet, "donor")
 router.register(r"donor-need", DonorNeedViewSet, "donor-need")
 
 
@@ -16,5 +15,6 @@ urlpatterns = [
     path(
         "register", UserViewSet.as_view({"post": "register_account"}), name="register"
     ),    
-    path("donors/claim/", DonorViewSet.as_view({"post": "claim"}), name="donor-claim")
+    path("donors/claim/", DonorViewSet.as_view({"post": "claim"}), name="donor-claim"),
+    path("donors/unclaim/", DonorNeedViewSet.as_view({"delete": "unclaim"}), name="donor-unclaim")
 ]
