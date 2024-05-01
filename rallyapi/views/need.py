@@ -67,7 +67,19 @@ class NeedViewSet(viewsets.ViewSet):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+    def update(self, request, pk=None): 
+        try:
+            need = Need.objects.get(pk=pk)
+        except Need.DoesNotExist:
+            return Response({'error': 'Need not found'}, status=status.HTTP_404_NOT_FOUND)
 
+        serializer = BasicNeedSerializer(need, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
     def retrieve(self, request, pk=None):
         try:
             user_id = int(pk)
