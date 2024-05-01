@@ -1,12 +1,12 @@
 from django.contrib import admin
 from django.urls import include, path
 from rest_framework import routers
-from rallyapi.views import NeedViewSet, UserViewSet, DonorViewSet
+from rallyapi.views import NeedViewSet, UserViewSet, DonorViewSet, DonorNeedViewSet
 
 
 router = routers.DefaultRouter(trailing_slash=False)
 router.register(r"needs", NeedViewSet, "need")
-router.register(r"donors", DonorViewSet, "donor")
+router.register(r"donor-need", DonorNeedViewSet, "donor-need")
 
 
 urlpatterns = [
@@ -15,6 +15,5 @@ urlpatterns = [
     path(
         "register", UserViewSet.as_view({"post": "register_account"}), name="register"
     ),    
-    path('needs/<int:user_id>/', NeedViewSet.as_view({'get': 'retrieve'}), name='user-needs'),
     path("donors/claim/", DonorViewSet.as_view({"post": "claim"}), name="donor-claim"),
 ]

@@ -20,20 +20,31 @@ class TypeSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class DonorSerializer(serializers.ModelSerializer):
-    type =  TypeSerializer(many=False)
+    type = TypeSerializer(many=False)
     user = UserSerializer(many=False)
+    id = serializers.IntegerField(source='pk')  # Add this line
+
     class Meta:
         model = Donor
-        fields = ['user','type']
+        fields = ['id', 'user', 'type']
+        
+class DonorNeedSerializer(serializers.ModelSerializer):
+    donor_type = TypeSerializer(many=False, source='donor.type')  # Adjust source
+
+    class Meta:
+        model = DonorNeed
+        fields = ['id', 'need', 'donor', 'donor_type']
+
 
 class NeedSerializer(serializers.ModelSerializer):
     user = UserSerializer()
     community = CommunitySerializer()
     donors = DonorSerializer(many=True)
+    donor_needs = DonorNeedSerializer(source='donorneed_set', many=True, read_only=True)
 
     class Meta:
         model = Need
-        fields = ['id', 'title', 'description', 'date_posted', 'complete', 'user', 'community', 'donors']
+        fields = ['id', 'title', 'description', 'date_posted', 'complete', 'user', 'community', 'donors', 'donor_needs']
 
 class NeedViewSet(viewsets.ViewSet):
     permission_classes = [permissions.IsAuthenticated]

@@ -11,8 +11,8 @@
       "model": "rallyapi.donorneed",
       "pk": 3,
       "fields": {
-        "donor": 1,
-        "need": 1
+        "donor": 2,
+        "need": 3
       }
     },
     {
