@@ -17,4 +17,5 @@ urlpatterns = [
         "register", UserViewSet.as_view({"post": "register_account"}), name="register"
     ),    
     path("donors/claim/", DonorViewSet.as_view({"post": "claim"}), name="donor-claim"),
+    path("needs/<int:user_id>/<int:pk>/", NeedViewSet.as_view({"get": "get_need_by_id"}), name="get-need-by-id"),
 ]

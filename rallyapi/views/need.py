@@ -3,6 +3,9 @@ from rest_framework import serializers, viewsets, permissions
 from rest_framework.response import Response
 from ..models import Community, Need, Donor, Type, DonorNeed
 from django.contrib.auth.models import User
+from rest_framework.decorators import action
+from django.shortcuts import get_object_or_404
+
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
@@ -59,7 +62,7 @@ class NeedViewSet(viewsets.ViewSet):
         return Response(serializer.data)
     
     def create(self, request):
-        serializer = BasicNeedSerializer(data=request.data)
+        serializer = NeedSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
@@ -83,3 +86,15 @@ class NeedViewSet(viewsets.ViewSet):
 
         need.delete()
         return Response({'message': 'Need deleted successfully'}, status=status.HTTP_204_NO_CONTENT)
+    
+    @action(detail=True, methods=['get'])
+    def get_need_by_id(self, request, user_id=None, pk=None):
+        try:
+            user_id = int(user_id)
+            pk = int(pk)
+        except ValueError:
+            return Response({'error': 'Invalid user ID or need ID'}, status=status.HTTP_400_BAD_REQUEST)
+
+        need = get_object_or_404(Need, pk=pk, user_id=user_id)
+        serializer = NeedSerializer(need)
+        return Response(serializer.data)
