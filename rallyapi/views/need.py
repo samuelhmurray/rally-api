@@ -62,7 +62,7 @@ class NeedViewSet(viewsets.ViewSet):
         return Response(serializer.data)
     
     def create(self, request):
-        serializer = NeedSerializer(data=request.data)
+        serializer = BasicNeedSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
