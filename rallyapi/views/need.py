@@ -100,7 +100,7 @@ class NeedViewSet(viewsets.ViewSet):
         return Response({'message': 'Need deleted successfully'}, status=status.HTTP_204_NO_CONTENT)
     
     @action(detail=True, methods=['get'])
-    def get_need_by_id(self, request, user_id=None, pk=None):
+    def get_need_by_user_and_need_id(self, request, user_id=None, pk=None):
         try:
             user_id = int(user_id)
             pk = int(pk)
@@ -108,5 +108,16 @@ class NeedViewSet(viewsets.ViewSet):
             return Response({'error': 'Invalid user ID or need ID'}, status=status.HTTP_400_BAD_REQUEST)
 
         need = get_object_or_404(Need, pk=pk, user_id=user_id)
+        serializer = NeedSerializer(need)
+        return Response(serializer.data)
+    
+    @action(detail=True, methods=['get'])
+    def get_need_by_need_id(self, request, pk=None):
+        try:
+            pk = int(pk)
+        except ValueError:
+            return Response({'error': 'Invalid user ID or need ID'}, status=status.HTTP_400_BAD_REQUEST)
+
+        need = get_object_or_404(Need, pk=pk)
         serializer = NeedSerializer(need)
         return Response(serializer.data)

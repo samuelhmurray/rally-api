@@ -1,51 +1,146 @@
 [
-    {
-      "model": "rallyapi.need",
-      "pk": 1,
-      "fields": {
-        "description": "Bench on Borad and Main",
-        "title": "Borad/Main Bench",
-        "date_posted": "2024-04-25",
-        "complete": true,
-        "community": 1,
-        "user": 1
-      }
-    },
-    {
-      "model": "rallyapi.need",
-      "pk": 3,
-      "fields": {
-        "description": "Bench for E 11th",
-        "title": "Bench E 11th",
-        "date_posted": "2024-04-25",
-        "complete": false,
-        "community": 1,
-        "user": 1
-      }
-    },
-    {
-      "model": "rallyapi.need",
-      "pk": 2,
-      "fields": {
-        "description": "Bus stop on 5th and Broad",
-        "title": "Bench on 5th and Broad",
-        "date_posted": "2024-04-26",
-        "complete": false,
-        "community": 2,
-        "user": 2
-      }
-    },
-    {
-      "model": "rallyapi.need",
-      "pk": 4,
-      "fields": {
-        "description": "Pot hole on 13th Street and Main",
-        "title": "Pot Hole",
-        "date_posted": "2024-04-26",
-        "complete": false,
-        "community": 2,
-        "user": 2
-      }
+  {
+    "model": "rallyapi.need",
+    "pk": 1,
+    "fields": {
+      "description": "A bench is needed at the intersection of Borad and Main to provide seating for pedestrians. This project will require a sturdy bench suitable for outdoor use, installation materials such as bolts and anchors, and tools like wrenches and drills. It may take 2-3 volunteers to install the bench properly. Estimated costs range from $200 to $300, covering the bench, installation materials, transportation, and other miscellaneous expenses.",
+      "title": "Borad/Main Bench",
+      "date_posted": "2024-04-25",
+      "complete": true,
+      "community": 1,
+      "user": 1
     }
-  ]
-  
+  },
+  {
+    "model": "rallyapi.need",
+    "pk": 3,
+    "fields": {
+      "description": "A bench is needed at the bus stop 23 on E 11th Street to provide seating for commuters. This project will require a durable bench suitable for outdoor use, installation materials such as bolts and anchors, and tools like wrenches and drills. It may take 2-3 volunteers to install the bench properly. Estimated costs range from $200 to $300, covering the bench, installation materials, transportation, and other miscellaneous expenses.",
+      "title": "Bench E 11th",
+      "date_posted": "2024-04-25",
+      "complete": false,
+      "community": 1,
+      "user": 1
+    }
+  },
+  {
+    "model": "rallyapi.need",
+    "pk": 2,
+    "fields": {
+      "description": "A bench is needed at bus stop #45 on 5th and Broad to provide seating for waiting passengers. This project will require a sturdy bench suitable for outdoor use, installation materials such as bolts and anchors, and tools like wrenches and drills. It may take 2-3 volunteers to install the bench properly. Estimated costs range from $200 to $300, covering the bench, installation materials, transportation, and other miscellaneous expenses.",
+      "title": "Bench on 5th and Broad",
+      "date_posted": "2024-04-26",
+      "complete": false,
+      "community": 2,
+      "user": 2
+    }
+  },
+  {
+    "model": "rallyapi.need",
+    "pk": 4,
+    "fields": {
+      "description": "There is a pothole at the corner of 13th Street and Main that needs repair to ensure road safety. This project will need asphalt or cold patch mix, gravel, shovels, wheelbarrows, tampers, traffic cones, and safety gear. It might take around 3-5 volunteers to get it done. As for cost, estimated expenses could range from $300 to $500, covering materials, potential equipment rental, transportation, and other miscellaneous expenses.",
+      "title": "Pot Hole",
+      "date_posted": "2024-04-26",
+      "complete": false,
+      "community": 2,
+      "user": 2
+    }
+  },
+  {
+    "model": "rallyapi.need",
+    "pk": 5,
+    "fields": {
+      "description": "A trash bin is needed at the intersection of 8th and Elm to prevent littering in the area. This project will require a durable trash bin suitable for outdoor use and installation materials such as bolts and anchors. It may take 1-2 volunteers to install the bin properly. Estimated costs range from $100 to $200, covering the trash bin, installation materials, transportation, and other miscellaneous expenses.",
+      "title": "Trash Bin",
+      "date_posted": "2024-04-27",
+      "complete": false,
+      "community": 1,
+      "user": 1
+    }
+  },
+  {
+    "model": "rallyapi.need",
+    "pk": 6,
+    "fields": {
+      "description": "A bench is needed at bus stop #45 on Broad Street to provide seating for waiting passengers. This project will require a sturdy bench suitable for outdoor use, installation materials such as bolts and anchors, and tools like wrenches and drills. It may take 2-3 volunteers to install the bench properly. Estimated costs range from $200 to $300, covering the bench, installation materials, transportation, and other miscellaneous expenses.",
+      "title": "Bench #45 bus stop",
+      "date_posted": "2024-04-28",
+      "complete": false,
+      "community": 1,
+      "user": 1
+    }
+  },
+  {
+    "model": "rallyapi.need",
+    "pk": 7,
+    "fields": {
+      "description": "There is a need for sidewalk repair on 10th Street to ensure pedestrian safety. This project will require concrete or pavement repair materials, shovels, wheelbarrows, safety gear, and potentially rented equipment like concrete mixers. It might take around 3-5 volunteers to complete the repair. Estimated costs range from $400 to $600, covering materials, potential equipment rental, transportation, and other miscellaneous expenses.",
+      "title": "Sidewalk Repair",
+      "date_posted": "2024-04-29",
+      "complete": false,
+      "community": 2,
+      "user": 2
+    }
+  },
+  {
+    "model": "rallyapi.need",
+    "pk": 8,
+    "fields": {
+      "description": "Crosswalk painting is needed on Main Street to improve pedestrian safety. This project will require paint, brushes or sprayers, safety gear, and potentially traffic cones for temporary traffic control. It might take around 2-4 volunteers to complete the painting. Estimated costs range from $200 to $400, covering materials, transportation, and other miscellaneous expenses.",
+      "title": "Crosswalk Painting",
+      "date_posted": "2024-04-30",
+      "complete": false,
+      "community": 2,
+      "user": 2
+    }
+  },
+  {
+    "model": "rallyapi.need",
+    "pk": 9,
+    "fields": {
+      "description": "Tree planting is needed in the park to enhance greenery and improve the environment. This project will require young trees, soil, shovels, wheelbarrows, and volunteers to assist in planting. It might take around 5-10 volunteers to plant multiple trees. Estimated costs range from $500 to $1000, covering tree purchase, soil, transportation, and other miscellaneous expenses.",
+      "title": "Tree Planting",
+      "date_posted": "2024-05-01",
+      "complete": false,
+      "community": 1,
+      "user": 1
+    }
+  },
+  {
+    "model": "rallyapi.need",
+    "pk": 10,
+    "fields": {
+      "description": "Repair is needed for playground equipment to ensure children's safety during play. This project will require replacement parts, tools for assembly, safety inspections, and potentially skilled volunteers or professionals. Estimated costs will vary depending on the extent of repairs needed, ranging from $500 to $1500, covering materials, labor, transportation, and other miscellaneous expenses.",
+      "title": "Playground Repair",
+      "date_posted": "2024-05-02",
+      "complete": false,
+      "community": 1,
+      "user": 1
+    }
+  },
+  {
+    "model": "rallyapi.need",
+    "pk": 11,
+    "fields": {
+      "description": "Graffiti cleanup is needed in the downtown area to improve the aesthetic appeal of the neighborhood. This project will require graffiti removal supplies such as solvents, brushes, and safety gear. It might take around 2-4 volunteers to clean up the graffiti. Estimated costs range from $100 to $300, covering materials, transportation, and other miscellaneous expenses.",
+      "title": "Graffiti Cleanup",
+      "date_posted": "2024-05-03",
+      "complete": false,
+      "community": 2,
+      "user": 2
+    }
+  },
+  {
+    "model": "rallyapi.need",
+    "pk": 12,
+    "fields": {
+      "description": "Installation is needed for a new bus shelter to provide protection for waiting passengers. This project will require a prefabricated shelter, installation materials such as bolts and anchors, tools like wrenches and drills, and potentially skilled volunteers or professionals. Estimated costs will vary depending on the shelter model and installation complexity, ranging from $1000 to $2000, covering shelter purchase, installation materials, labor, transportation, and other miscellaneous expenses.",
+      "title": "Bus Shelter Installation",
+      "date_posted": "2024-05-04",
+      "complete": false,
+      "community": 2,
+      "user": 2
+    }
+  }
+]
